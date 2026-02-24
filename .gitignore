@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+*.pyo
+*.db
+*.log
+.env
+_mitm_addon.py
+.mitmproxy/
