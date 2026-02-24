@@ -35,10 +35,10 @@ from rich import box
 # CONFIGURATION — Edit these values
 # ============================================================
 # Your Windows PC's Tailscale IP (find it with 'tailscale status')
-AGENT_URL = "http://100.x.x.x:8745"
+AGENT_URL = "http://100.83.241.97:8745"
 
 # Same auth token as in windows_agent/config.py
-AUTH_TOKEN = "CHANGE_ME"
+AUTH_TOKEN = "yeNTj8zguBu593SThEMvwIJ-_r9YLFuliNWT3JTzJA8"
 
 # ============================================================
 console = Console()
@@ -51,7 +51,7 @@ def _headers():
 def _get(path: str, params: dict = None) -> dict:
     """Make a GET request to the agent."""
     try:
-        r = requests.get(f"{AGENT_URL}{path}", headers=_headers(), params=params, timeout=30)
+        r = requests.get(f"{AGENT_URL}{path}", headers=_headers(), params=params, timeout=120)
         if r.status_code == 401:
             console.print("[red]Authentication failed. Check your AUTH_TOKEN.[/red]")
             sys.exit(1)
